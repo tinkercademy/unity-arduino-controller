@@ -1,0 +1,72 @@
+This document is best read together with the readme document.
+
+Preparation 
+
+Things required:
+1x Arduino or Freaduino 
+1x Potentiometer
+1x ADkey board
+1x mini USB wire (for freaduino users)
+1x square USB wire (for Arduino users)
+Many wires 
+1x breadboard
+2x buttons 
+
+Difference between Arduino and Freaduino
+- Both are the same but Freaduino have more ports. Meaning that potentiometer, ADkey board, buttons and breadboard will work on both Arduino and Freaduino. 
+
+3 Ways to add an Arduino/freaduino controller to unity
+1)ADkey board V1.0 by elecfreaks
+	Components needed:
+	-1x Arduino or Freaduino 
+	-1x ADkey board
+	-1x mini USB wire (for freaduino users)
+	-1x square USB wire (for Arduino users)
+2)Potentiometer by elecfreaks
+	components needed:
+	-1x Arduino or Freaduino 
+	-1x Potentiometer
+	-1x mini USB wire (for freaduino users)
+	-1x square USB wire (for Arduino users)
+3)Breadboard with buttons
+	-components needed:
+	-Many wires 
+	-1x breadboard
+	-2x buttons 
+	-1x mini USB wire (for freaduino users)
+	-1x square USB wire (for Arduino users)
+
+How to setup:
+- details under readme document.
+- For ADkey board and potentiometer, link G (Ground), V (voltage) and S (signal) (note S is written as OUT for potentiometer) to the respective GVS on the Arduino/freaduino. 
+	-For both Arduino and freaduino, make sure that S is linked to the A0 pin. 
+	-If you are using Arduino, make sure that you connect V to 3.3V on arduino and S to A0 pin 
+	-If you re using Freaduino, connect the wire directly to A0 pin (GVS is written at the A0 pin)
+
+Details of the numbers:
+1)potentiometer produces output with range 0-255
+2)Adkey board produces output values 0, 11,22, 32, 136, 255
+3)buttons on breadboard produces values 1 or 2. (Can be changed in Arduino code)
+
+How the code works:
+1)On Arduino
+	-serial.write() writes the output value in byte
+	-serial.flush() removes the output value after a very short delay (for responsive buttons)
+2)On unity
+	-readbyte() reads the byte output value from Arduino. When it is between a certain number, it will carry out certain movements (move left or move right). 
+
+
+
+Unity
+
+
+Prefab - Allows you to create, configure, and store a GameObject complete with all its components, property values, and child GameObjects as a reusable Asset.
+
+Scenes - All the game scenes
+
+Scripts - All the C# codes written
+
+Unity Asset Packages - All the asset that is gotten from the Unity asset store
+
+Scripts
+Comments is written inside each script to provide assistance to understand how the code works
