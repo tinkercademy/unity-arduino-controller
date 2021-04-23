@@ -1,12 +1,13 @@
 Arduino controller in unity. Includes a game (similar to beatsaber) for you to test out the controller. 
 This version is tested on and supports both Arduino and Freaduino, and supports controllers ADkey board, potentiometer, buttons (small) on breadboard. 
 
-Game controls: pressing the red buttons on ADkey board or changing the values on potentiometer will cause the player cube in game to move. 
+Game controls: pressing the red buttons on ADkey board or changing the values on potentiometer will cause the player cube in game to move. The objective is for player cube to destroy incoming cubes on collision. 
 
 How to set up the controller:
 1) Set up your Arduino/Freaduino first. 
-	a. If you are using the ADkey board/potentiometer, plug it in to the Freaduino/Arduino. Connect the GVS on the freaduino to the GVS on the controller respectively. Take note that the "S" on the ADkey board (written as OUT for potentiometer) should be connected to A0 Pin. 
+	a. If you are using the ADkey board/potentiometer, plug it in to the Freaduino/Arduino. Connect the GVS on the freaduino to the GVS on the controller 		respectively. Take note that the "S" on the ADkey board (written as OUT for potentiometer) should be connected to A0 Pin. 
 	b. If you are using 2 buttons on breadboard, plug it in to the Freaduino/Arduino and make sure that the input is at pin 8 and 3 respectively. 
+	
 *G=Ground ; V=voltage ; S=Signal (input/output)
 
 2)a.If you are using ADkeyboard/potentiometer, open UNOfreaduinocontroller.ino 
@@ -21,15 +22,15 @@ How to set up the controller:
 6)Go to the C# script titled "adruino.sln" under arduinogame_unity folder and edit the "/dev/tty.usbmodem14101" with your own port number "/dev/tty.usbmodemXXXXX". This port number can be viewed under Arduino->tools->port. 
 
 7)a. If you are using ADkey board, test out the controller by clicking the play button. 
-  b. If you are using potentiometer/small buttons on breadboard, edit the values as instructed in the C# script titled "adruino.sln". 
+  b. If you are using potentiometer/small buttons on breadboard, edit the values as instructed in the C# script titled "adruino.sln" in unity
 
-8)If setup is done correctly you should be able to move the cube left and right in the game. In this game, the player cube will destroy incoming cubes on collision. 
+8)If setup is done correctly you should be able to move the cube left and right in the game. 
 
 Additional information
 1)potentiometer produces output with range 0-255
 2)Adkey board produces output values 0, 11,22, 32, 136, 255
 3)buttons on breadboard produces values 1 or 2. 
-
+4)IGNORE the files .vs/adruinocode_forunity/xs. and .DS_Store
 
 For a more detailed setup and explanations, please refer to document titled "user manual"
 
